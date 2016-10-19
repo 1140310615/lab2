@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+   "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+   "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+	<package name="Lab2" extends="struts-default">
+
+		<action name="queryall" class="com.lining.struts2.bookaction"
+			method="queryall">
+			<result name="success">/index.jsp</result>
+		</action>
+
+		<action name="add" class="com.lining.struts2.bookaction"
+			method="create">
+			<result name="success">/addsuccess.jsp</result>
+			<result name="error">/addauthor.jsp</result>
+			<result name="input">/add.jsp</result>
+		</action>
+
+		<action name="addauthor" class="com.lining.struts2.authoraction"
+			method="create">
+			<result name="success">/addsuccess.jsp</result>
+			<result name="input">/addauthor.jsp</result>
+		</action>
+
+		<action name="info" class="com.lining.struts2.bookaction"
+			method="queryisbn">
+			<result name="success">/detail.jsp</result>
+		</action>
+
+		<action name="delete" class="com.lining.struts2.bookaction"
+			method="dele">
+			<result name="success">/delsuccess.jsp</result>
+		</action>
+
+		<action name="modify" class="com.lining.struts2.bookaction"
+			method="modify">
+			<result name="success">/add.jsp</result>
+		</action>
+
+		<action name="queryauthor" class="com.lining.struts2.bookaction"
+			method="queryauthor">
+			<result name="success">/queryauthor.jsp</result>
+		</action>
+		
+		<action name="queryallauthor" class="com.lining.struts2.authoraction"
+			method="queryall">
+			<result name="success">/allauthor.jsp</result>
+		</action>
+	</package>
+</struts>
